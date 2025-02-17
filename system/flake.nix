@@ -11,7 +11,7 @@
     nixosConfigurations.x807x = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./configuration.nix
+        ./config.nix
       ];
     };
   };
