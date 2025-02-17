@@ -17,7 +17,7 @@
     ./modules/amd-drivers.nix
     ./modules/nvidia-drivers.nix
     ./modules/nvidia-prime-drivers.nix
-    ./modules/intel-drivers.nix
+#    ./modules/intel-drivers.nix
     ./modules/vm-guest-services.nix
     ./modules/local-hardware-clock.nix
   ];
@@ -102,11 +102,11 @@
 
   # Extra Module Options
   drivers.amdgpu.enable = true;
-  drivers.intel.enable = true;
+#  drivers.intel.enable = true;
   drivers.nvidia.enable = false;
   drivers.nvidia-prime = {
     enable = false;
-    intelBusID = "";
+#intelBusID = "";
     nvidiaBusID = "";
   };
   vm.guest-services.enable = false;

@@ -88,6 +88,8 @@
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
 
+    # Qemu
+	quickemu
     # Rust 
     rustc cargo gcc rustfmt clippy
     # VScode
