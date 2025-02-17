@@ -7,12 +7,23 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, ... }@ inputs: {
+  outputs = { self, nixpkgs, ... }@ inputs:
+  let
+    username = "x807x";
+    host = "x807x";
+    system = "x86_64-linux";
+  in
+  {
     nixosConfigurations.x807x = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./config.nix
-      ];
+      specialArgs = {
+        inherit username;
+        inherit inputs;
+        inherit system;
+        inherit host;
+      };
+        modules = [
+          ./config.nix
+        ];
     };
   };
 }
