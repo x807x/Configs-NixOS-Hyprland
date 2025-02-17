@@ -104,6 +104,7 @@
 		 ms-vscode-remote.remote-ssh
 		 ms-vscode.cmake-tools
 		 esbenp.prettier-vscode
+                 jnoortheen.nix-ide
 		 ];
 		 })
      ]) ++ [
