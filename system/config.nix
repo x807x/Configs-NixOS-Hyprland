@@ -121,7 +121,7 @@
   services.automatic-timezoned.enable = true; #based on IP location
   
   #https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  time.timeZone = "Asia/Taipei"; # Set local timezone
+#  time.timeZone = "Asia/Taipei"; # Set local timezone
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -137,6 +137,26 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+  # Remember to add "exec-once=fcitx5 -d # not ${pkgs.fcitx5}/bin/fcitx5 !"
+  # to ~/config/hypr/hyprland.conf
+  	i18n.inputMethod = {
+		type = "fcitx5";
+		enable = true;
+
+		fcitx5 = {
+		  waylandFrontend = true;
+          addons = with pkgs; [
+			fcitx5-chewing
+			fcitx5-mozc
+#			fcitx5-gtk
+			fcitx5-chinese-addons
+#      fcitx5-breeze
+			fcitx5-configtool
+#		    kdePackages.fcitx5-qt
+		];
+
+	  };
+	};
 
 
   # Services to start
