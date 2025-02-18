@@ -7,13 +7,16 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, ... }@ inputs:
-  let
+  outputs = {
+    self,
+    nixpkgs,
+    ...
+  } @ inputs: let
     username = "x807x";
     host = "x807x";
     system = "x86_64-linux";
-  in
-  {
+  in {
+    formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
     nixosConfigurations.x807x = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit username;
@@ -21,9 +24,9 @@
         inherit system;
         inherit host;
       };
-        modules = [
-          ./config.nix
-        ];
+      modules = [
+        ./config.nix
+      ];
     };
   };
 }
